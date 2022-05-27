@@ -7,3 +7,15 @@
 </div>
 
 <a href="{{route('comics.index')}}">Back</a>
+
+<form action="{{route('comics.destroy' , $comic->id)}}" method="POST">
+    @csrf
+    @method('DELETE')
+    <div class="container">
+        Sicuro di voler cancellare il fumetto?
+    </div>
+
+<input type="submit" value="Cancella"></input>
+</form>
+
+
