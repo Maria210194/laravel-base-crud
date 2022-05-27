@@ -5,4 +5,5 @@
     <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
     <p></p>
 </div>
+
 <a href="{{route('comics.index')}}">Back</a>

@@ -27,6 +27,7 @@
         @endforelse
     </div>
 
+    <a href="{{route('comics.create')}}">Aggiungi Nuovo</a>
 
 
 </body>
