@@ -14,8 +14,9 @@
     <div class="container">
         @forelse ($comics as $comic)
         <div class="card">
-                <img src="{{$comic->thumb}}" alt="{{$comic->title}}">
-                <a href="{{route('comics.show', $comic->id)}}">More..</a>
+                <img src="{{$comic->thumb}}" alt="{{$comic->title}}"><br>
+                <a href="{{route('comics.show', $comic->id)}}">More..</a><br>
+                <a href="{{route('comics.edit', $comic->id)}}">Edit the comic</a>
                 <h3>{{$comic->title}}</h3>
                 <p>Price: {{$comic->price}} &euro;</p>
                 <p>Series: {{$comic->series}}</p>
@@ -26,9 +27,9 @@
             <h1>No comics found </h1>
         @endforelse
     </div>
-
-    <a href="{{route('comics.create')}}">Aggiungi Nuovo</a>
-
+    <div class="container">
+        <a href="{{route('comics.create', $comic->id)}}">Create new comic</a>
+    </div>
 
 </body>
 </html>
