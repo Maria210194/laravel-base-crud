@@ -58,10 +58,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
-        $comic=Comic::find($id);
+        //siccome ho definito sopra nelle parentesi che gli arriverà un oggetto Comic,
+        //posso anche non scrivere questa riga:
+        //$comic=Comic::find($id);
         return view('comics.show', compact('comic'));
     }
 
@@ -71,10 +72,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
         //
-        $comic = Comic::findOrFail($id);
+        //$comic = Comic::findOrFail($id);
         return view('comics.edit', compact('comic'));
     }
 
@@ -85,10 +86,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
         //
-        $comic = Comic::findOrFail($id);
+        //$comic = Comic::findOrFail($id);
         $data = $request->all();
         $comic->fill($data);
         $comic->update();
@@ -101,10 +102,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
         //
-        $comic=Comic::find($id);
+        //$comic=Comic::find($id);
         $comic->delete();
         return redirect()->route('comics.index');
     }

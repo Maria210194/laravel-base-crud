@@ -2,11 +2,14 @@
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;}
+body{
+    background-color: #020b38;
 }
 
 h1{
-    color: red;
+    color: #eebbc3;
+    font-size: 70px;
     text-align: center;
     padding: 10px;
 }
@@ -14,12 +17,37 @@ h1{
 .container{
     display: flex;
     flex-wrap: wrap;
+    row-gap: 10px;
+    color: #b8c1ec;
+}
+
+.column{
+    flex-direction: column;
 }
 
 .card{
-    width: 30%;
-    margin-top: 15px;
+    width: 19%;
+    margin: 15px 0 0 2px auto;
     padding: 10px;
     text-align: center;
-    border: 1px solid red;
 }
+.card:hover{
+    border: 1px solid #b8c1ec;
+}
+
+.newcomic{
+    margin-bottom: 10px;
+}
+
+.card img{
+    width: 80%;
+}
+
+a{
+    color: #b8c1ec;
+}
+
+h3{
+    color: #eebbc3;
+}
+
