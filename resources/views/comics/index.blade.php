@@ -11,7 +11,7 @@
     <title>Comics</title>
 </head>
 <body>
-    <h1>
+    <h1 class="text-focus-in">
         Comics
     </h1>
     <div class="container">
@@ -20,6 +20,16 @@
                 <img src="{{$comic->thumb}}" alt="{{$comic->title}}"><br>
                 <a href="{{route('comics.show', $comic->id)}}">More..</a><br>
                 <a href="{{route('comics.edit', $comic->id)}}">Edit the comic</a>
+                <div>
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="delete-button heartbeat" type="submit">
+                            Elimina
+                        </button>
+
+                    </form>
+                </div>
                 <h3>{{$comic->title}}</h3>
                 <p>Price: {{$comic->price}} &euro;</p>
                 <p>Series: {{$comic->series}}</p>
@@ -29,9 +39,12 @@
         @empty
             <h1>No comics found </h1>
         @endforelse
-        <div class="card newcomic">
+        <div class="card newcomic heartbeat">
             <a href="{{route('comics.create', $comic->id)}}">Create new comic</a>
         </div>
     </div>
+
+    <script src="{{asset('js/app.js')}}" defer></script>
 </body>
 </html>
+
