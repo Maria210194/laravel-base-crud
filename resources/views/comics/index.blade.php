@@ -1,3 +1,6 @@
+@extends('layout.app')
+@section('contentMain')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Comics</title>
+
 </head>
 <body>
     <h1 class="text-focus-in">
@@ -43,8 +46,7 @@
             <a href="{{route('comics.create', $comic->id)}}">Create new comic</a>
         </div>
     </div>
-
-    <script src="{{asset('js/app.js')}}" defer></script>
 </body>
 </html>
 
+@endsection
